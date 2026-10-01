@@ -1,0 +1,35 @@
+{
+  "timeline": {
+    "headline": "我的生日时间轴",
+    "text": "副标题文字，不想显示就留空字符串",
+    "type": "default",
+    "asset": {
+      "media": "img/key_logo.png"
+    },
+    "date": [
+      {
+        "headline": "第一个人名字",
+        "text": "这里写介绍文字",
+        "startDate": "2000,3,5,0,0,0",
+        "asset": {
+          "media": "img/ren1.png",
+          "thumbnail": "img_thumb/ren1_small.png",
+          "credit": "图片来源署名"
+        }
+      },
+      {
+        "headline": "第二个人名字（原站风格带属性表）",
+        "text": "<span>拼音或罗马音</span><br/><br/><div><span class=\"label label-default\">系列名</span></div><br/><div class=\"table-responsive\"><table class=\"table table-striped\"><thead><tr></tr></thead><tbody><tr><td>Height:</td><td align=\"right\">170 cm</td></tr><tr><td>Weight:</td><td align=\"right\">60 kg</td></tr><tr><td>Blood:</td><td align=\"right\">A</td></tr><tr><td>B/W/H:</td><td align=\"right\">88/60/85</td></tr><tr><td>Cup:</td><td align=\"right\">C</td></tr><tr><td>CV:</td><td align=\"right\">声优名字</td></tr></tbody></table></div>",
+        "startDate": "2000,7,20,0,0,0",
+        "asset": {
+          "media": "img/ren2.png"
+        }
+      },
+      {
+        "headline": "第三个人名字（不要图片的写法）",
+        "text": "纯文字介绍，也支持 <b>加粗</b>、<a href=\"https://example.com\">链接</a> 等 HTML",
+        "startDate": "2000,12,1,0,0,0"
+      }
+    ]
+  }
+}

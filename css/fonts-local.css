@@ -1,0 +1,12 @@
+/* 本地化 Google Fonts: Bree Serif + Open Sans (latin 子集) */
+@font-face{font-family:'Bree Serif';font-style:normal;font-weight:400;font-display:swap;src:url('../fonts/BreeSerif-normal-400.woff2') format('woff2');}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:300;font-display:swap;src:url('../fonts/OpenSans-italic-300.woff2') format('woff2');}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:400;font-display:swap;src:url('../fonts/OpenSans-italic-400.woff2') format('woff2');}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:600;font-display:swap;src:url('../fonts/OpenSans-italic-600.woff2') format('woff2');}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:700;font-display:swap;src:url('../fonts/OpenSans-italic-700.woff2') format('woff2');}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:800;font-display:swap;src:url('../fonts/OpenSans-italic-800.woff2') format('woff2');}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;font-display:swap;src:url('../fonts/OpenSans-normal-300.woff2') format('woff2');}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url('../fonts/OpenSans-normal-400.woff2') format('woff2');}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-display:swap;src:url('../fonts/OpenSans-normal-600.woff2') format('woff2');}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url('../fonts/OpenSans-normal-700.woff2') format('woff2');}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;font-display:swap;src:url('../fonts/OpenSans-normal-800.woff2') format('woff2');}
