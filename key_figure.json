@@ -1,18 +1,18 @@
 {
   "timeline": {
-    "headline": "我的生日时间轴",
-    "text": "副标题文字，不想显示就留空字符串",
+    "headline": "公告栏",
+    "text": "注意时间安排哦",
     "type": "default",
     "asset": {
-      "media": "img/key_logo.png"
+      "media": "img/gaoshi.jpg"
     },
     "date": [
       {
-        "headline": "第一个人名字",
-        "text": "这里写介绍文字",
-        "startDate": "2000,3,5,0,0,0",
+        "headline": "人大代表选举",
+        "text": "校区此次选举共设置6个投票点：二期运动场、香樟食堂、研究生楼、银杏食堂、图书馆报告厅、风雨操场。\n新能源科学与工程专业：时间（13:30-14:00)；地点（研究生楼）;\n油气储运工程专业：时间（10:30-11:00)；地点（研究生楼）。",
+        "startDate": "2026,11,4,13,0,0",
         "asset": {
-          "media": "img/ren1.png",
+          "media": "img/1.jpg",
           "thumbnail": "img_thumb/ren1_small.png",
           "credit": "图片来源署名"
         }
@@ -20,7 +20,7 @@
       {
         "headline": "第二个人名字（原站风格带属性表）",
         "text": "<span>拼音或罗马音</span><br/><br/><div><span class=\"label label-default\">系列名</span></div><br/><div class=\"table-responsive\"><table class=\"table table-striped\"><thead><tr></tr></thead><tbody><tr><td>Height:</td><td align=\"right\">170 cm</td></tr><tr><td>Weight:</td><td align=\"right\">60 kg</td></tr><tr><td>Blood:</td><td align=\"right\">A</td></tr><tr><td>B/W/H:</td><td align=\"right\">88/60/85</td></tr><tr><td>Cup:</td><td align=\"right\">C</td></tr><tr><td>CV:</td><td align=\"right\">声优名字</td></tr></tbody></table></div>",
-        "startDate": "2000,7,20,0,0,0",
+        "startDate": "2020,7,20,0,0,0",
         "asset": {
           "media": "img/ren2.png"
         }
