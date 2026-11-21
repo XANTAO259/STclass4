@@ -340,9 +340,9 @@
 
     <!-- ===== 左侧导航栏（112px 图标栏） ===== -->
     <aside class="side-rail">
-      <a class="rail-brand" href="#/timeline">
-        <img src="img/key_logo.png" alt="logo">
-        <span class="rail-brand-name">我的</span>
+      <a class="rail-brand" href="https://www.cdut.edu.cn/">
+        <img src="img/xiaohui.jpg" alt="home">
+        <span class="rail-brand-name">成理</span>
       </a>
       <nav class="rail-nav" id="rail-nav">
         <a href="#/home" data-page="home">
@@ -353,17 +353,17 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
           <span>公告</span>
         </a>
-        <a href="#/characters" data-page="characters">
+        <a href="#/albums" data-page="albums">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          <span>角色</span>
+          <span>班级相册</span>
         </a>
         <a href="#/about" data-page="about">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-          <span>关于</span>
+          <span>讨论区</span>
         </a>
         <a href="#/contact" data-page="contact">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
-          <span>联系</span>
+          <span></span>
         </a>
       </nav>
       <div class="rail-user">
@@ -419,9 +419,9 @@
     </div>
 
     <!-- ===== 视图：角色 ===== -->
-    <div id="page-characters" class="page" style="display:none;">
+    <div id="page-album" class="page" style="display:none;">
       <div class="container page-pad">
-        <h1>角色</h1>
+        <h1></h1>
         <p class="lead">在这里放你的角色介绍。想加一张卡片，复制下面任意一个 col-sm-4 块，改成你的内容。</p>
         <div class="row">
           <!-- 卡片 1：可编辑 -->
@@ -461,10 +461,10 @@
       </div>
     </div>
 
-    <!-- ===== 视图：关于 ===== -->
+    <!-- ===== 视图：讨论区 ===== -->
     <div id="page-about" class="page" style="display:none;">
       <div class="container page-pad">
-        <h1>关于</h1>
+        <h1>讨论区</h1>
         <p class="lead">介绍一下这个网站。</p>
         <div class="panel-kun" style="max-width:720px;">
           <p>在这里写网站的介绍、制作背景、资料来源等信息。</p>
@@ -489,8 +489,8 @@
     <!-- ===== SPA 分页路由 ===== -->
     <script>
       (function () {
-        var PAGES = ['home', 'timeline', 'characters', 'about', 'contact'];
-        var TITLES = { home: '首页', timeline: '时间线', characters: '角色', about: '关于', contact: '联系' };
+        var PAGES = ['home', 'timeline', 'album', 'discuss', 'contact'];
+        var TITLES = { home: '首页', timeline: '时间线', album: '相册', discuss: '讨论', contact: '联系' };
 
         function showPage(name) {
           if (PAGES.indexOf(name) === -1) name = 'timeline';
