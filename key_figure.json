@@ -18,8 +18,8 @@
         }
       },
       {
-        "headline": "第二个",
-        "text": "<span>？？？？？</span><br/><br/><div><span class=\"label label-default\">作业</span></div><br/><div class=\"table-responsive\"><table class=\"table table-striped\"><thead><tr></tr></thead><tbody><tr><td>简介</td><td align=\"right\">2顶顶顶顶顶顶顶顶顶</td></tr><tr><td>地点</td><td align=\"right\">11111</td></tr><tr><td>人数</td><td align=\"right\">30</td></tr><tr><td>要求</td><td align=\"right\">哈哈哈哈哈哈哈哈哈哈哈哈</td></tr><tr><td>开始时间</td><td align=\"right\">2026年11月22日</td></tr><tr><td>截止时间：</td><td align=\"right\">2026年11月22日</td></tr></tbody></table></div>",
+        "headline": "第二个人名字",
+        "text": "<span>拼音或罗马音</span><br/><br/><div><span class=\"label label-default\">系列名</span></div><br/><div class=\"table-responsive\"><table class=\"table table-striped\"><thead><tr></tr></thead><tbody><tr><td>Height:</td><td align=\"right\">170 cm</td></tr><tr><td>Weight:</td><td align=\"right\">60 kg</td></tr><tr><td>Blood:</td><td align=\"right\">A</td></tr><tr><td>B/W/H:</td><td align=\"right\">88/60/85</td></tr><tr><td>Cup:</td><td align=\"right\">C</td></tr><tr><td>CV:</td><td align=\"right\">声优名字</td></tr></tbody></table></div>",
         "startDate": "2026,11,22,13,0,0",
         "asset": {
           "media": "img/ren2.png"
