@@ -16,8 +16,15 @@
           "thumbnail": "img_thumb/ren1_small.png",
           "credit": "图片来源署名"
         }
+      },
+      {
+        "headline": "第二个",
+        "text": "<span>？？？？？</span><br/><br/><div><span class=\"label label-default\">作业</span></div><br/><div class=\"table-responsive\"><table class=\"table table-striped\"><thead><tr></tr></thead><tbody><tr><td>简介</td><td align=\"right\">2顶顶顶顶顶顶顶顶顶</td></tr><tr><td>地点</td><td align=\"right\">11111</td></tr><tr><td>人数</td><td align=\"right\">30</td></tr><tr><td>要求</td><td align=\"right\">哈哈哈哈哈哈哈哈哈哈哈哈</td></tr><tr><td>开始时间</td><td align=\"right\">2026年11月22日</td></tr><tr><td>截止时间：</td><td align=\"right\">2026年11月22日</td></tr></tbody></table></div>",
+        "startDate": "2026,11,22,13,0,0",
+        "asset": {
+          "media": "img/ren2.png"
+        }
       }
-
     ]
   }
 }
