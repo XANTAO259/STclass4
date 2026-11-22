@@ -568,18 +568,42 @@
 
       function renderPhotoGrid() {
         var grid = document.getElementById('album-photo-grid');
-        var photos = currentAlbum.photos.concat(previewByAlbum[currentAlbum.id] || []);
+        var previews = previewByAlbum[currentAlbum.id] || [];
+        var list = [];
+        currentAlbum.photos.forEach(function (ph) { list.push({ ph: ph, editable: false }); });
+        previews.forEach(function (ph, idx) { list.push({ ph: ph, editable: true, idx: idx }); });
         grid.innerHTML = '';
-        if (!photos.length) {
+        if (!list.length) {
           grid.innerHTML = '<p class="muted">这个相册集还没有照片。</p>';
           return;
         }
-        photos.forEach(function (ph) {
+        list.forEach(function (item) {
+          var ph = item.ph;
           var card = document.createElement('div'); card.className = 'album-card';
           var img = document.createElement('img'); img.src = ph.src; img.alt = ph.title;
           var cap = document.createElement('div'); cap.className = 'album-caption';
           var h3 = document.createElement('h3'); h3.textContent = ph.title; cap.appendChild(h3);
           card.appendChild(img); card.appendChild(cap);
+          if (item.editable) {
+            var actions = document.createElement('div'); actions.className = 'photo-actions';
+            var editBtn = document.createElement('button'); editBtn.type = 'button'; editBtn.title = '改标题'; editBtn.textContent = '✎';
+            editBtn.addEventListener('click', function (ev) {
+              ev.stopPropagation();
+              var t = prompt('输入照片标题', ph.title);
+              if (t !== null && t.trim()) { ph.title = t.trim(); renderPhotoGrid(); }
+            });
+            var delBtn = document.createElement('button'); delBtn.type = 'button'; delBtn.title = '删除'; delBtn.textContent = '×';
+            delBtn.addEventListener('click', function (ev) {
+              ev.stopPropagation();
+              if (confirm('确定删除这张照片吗？')) {
+                previews.splice(item.idx, 1);
+                renderPhotoGrid();
+                renderSetList();
+              }
+            });
+            actions.appendChild(editBtn); actions.appendChild(delBtn);
+            card.appendChild(actions);
+          }
           card.addEventListener('click', function () { openLightbox(ph.src, ph.title); });
           grid.appendChild(card);
         });
