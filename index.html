@@ -432,10 +432,10 @@
       <div class="home-wrap">
         <div>
           <h1>油气储运工程四班</h1>
-          <p class="lead">记录重要的人，与他们的特别日子</p>
+          <p class="lead">班级公告 · 照片相册 · 日常讨论</p>
           <p>
-            <a class="btn btn-primary btn-lg" href="#/timeline">公告</a>
-            <a class="btn btn-default btn-lg" href="#/about">日记</a>
+            <a class="btn btn-primary btn-lg" href="#/timeline">查看公告</a>
+            <a class="btn btn-default btn-lg" href="#/album">班级相册</a>
           </p>
         </div>
       </div>
@@ -499,6 +499,121 @@
         </div>
       </div>
     </div>
+    <!-- 相册集逻辑 -->
+    <script>
+      // 相册数据：新增相册集就在这里加一段；photos 里放该集的照片
+      var ALBUMS = [
+        {
+          id: 'activity',
+          title: '班级活动',
+          desc: '班级集体活动、会议照片',
+          photos: [
+            { src: 'img/1.jpg', title: '选举工作安排' }
+          ]
+        }
+      ];
+      var currentAlbum = null;
+      var previewByAlbum = {};
+
+      function getAlbum(id) {
+        for (var i = 0; i < ALBUMS.length; i++) {
+          if (ALBUMS[i].id === id) return ALBUMS[i];
+        }
+        return null;
+      }
+
+      function renderSetList() {
+        var grid = document.getElementById('album-set-grid');
+        grid.innerHTML = '';
+        ALBUMS.forEach(function (album) {
+          var photos = album.photos.concat(previewByAlbum[album.id] || []);
+          var card = document.createElement('div');
+          card.className = 'album-set-card';
+          if (photos.length) {
+            var img = document.createElement('img');
+            img.src = photos[0].src; img.alt = album.title;
+            card.appendChild(img);
+          } else {
+            var ph = document.createElement('div');
+            ph.className = 'album-set-ph'; ph.textContent = '暂无照片';
+            card.appendChild(ph);
+          }
+          var cap = document.createElement('div'); cap.className = 'album-caption';
+          var h3 = document.createElement('h3'); h3.textContent = album.title; cap.appendChild(h3);
+          var count = document.createElement('p'); count.className = 'album-count'; count.textContent = photos.length + ' 张照片'; cap.appendChild(count);
+          if (album.desc) { var p = document.createElement('p'); p.textContent = album.desc; cap.appendChild(p); }
+          card.appendChild(cap);
+          card.addEventListener('click', function () { openAlbum(album.id); });
+          grid.appendChild(card);
+        });
+      }
+
+      function openAlbum(id) {
+        currentAlbum = getAlbum(id);
+        if (!currentAlbum) return;
+        document.getElementById('album-set-view').style.display = 'none';
+        document.getElementById('album-photo-view').style.display = 'block';
+        document.getElementById('album-inner-title').textContent = currentAlbum.title;
+        document.getElementById('album-inner-desc').textContent = currentAlbum.desc || '';
+        renderPhotoGrid();
+      }
+
+      function renderPhotoGrid() {
+        var grid = document.getElementById('album-photo-grid');
+        var photos = currentAlbum.photos.concat(previewByAlbum[currentAlbum.id] || []);
+        grid.innerHTML = '';
+        if (!photos.length) {
+          grid.innerHTML = '<p class="muted">这个相册集还没有照片。</p>';
+          return;
+        }
+        photos.forEach(function (ph) {
+          var card = document.createElement('div'); card.className = 'album-card';
+          var img = document.createElement('img'); img.src = ph.src; img.alt = ph.title;
+          var cap = document.createElement('div'); cap.className = 'album-caption';
+          var h3 = document.createElement('h3'); h3.textContent = ph.title; cap.appendChild(h3);
+          card.appendChild(img); card.appendChild(cap);
+          card.addEventListener('click', function () { openLightbox(ph.src, ph.title); });
+          grid.appendChild(card);
+        });
+      }
+
+      document.getElementById('album-back').addEventListener('click', function () {
+        document.getElementById('album-photo-view').style.display = 'none';
+        document.getElementById('album-set-view').style.display = 'block';
+        currentAlbum = null;
+        renderSetList();
+      });
+
+      document.getElementById('album-pick').addEventListener('change', function (e) {
+        if (!currentAlbum) return;
+        var arr = previewByAlbum[currentAlbum.id] = previewByAlbum[currentAlbum.id] || [];
+        Array.prototype.forEach.call(e.target.files, function (f) {
+          arr.push({ src: URL.createObjectURL(f), title: f.name.replace(/\.[^.]+$/, '') });
+        });
+        renderPhotoGrid();
+      });
+
+      renderSetList();
+    </script>
+
+    <!-- 大图灯箱 -->
+    <script>
+      var lightbox = document.getElementById('lightbox');
+      var lightboxImg = document.getElementById('lightbox-img');
+      var lightboxTitle = document.getElementById('lightbox-title');
+      function openLightbox(src, title) {
+        lightboxImg.src = src;
+        lightboxTitle.textContent = title || '';
+        lightbox.classList.add('open');
+      }
+      function closeLightbox() {
+        lightbox.classList.remove('open');
+        lightboxImg.src = '';
+      }
+      document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLightbox(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLightbox(); });
+    </script>
 
     <!-- ===== SPA 分页路由 ===== -->
     <script>
